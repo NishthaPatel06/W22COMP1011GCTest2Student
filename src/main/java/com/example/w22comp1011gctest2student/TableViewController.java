@@ -2,14 +2,13 @@
 //Student Number: 200474598
 package com.example.w22comp1011gctest2student;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -84,6 +83,18 @@ public class TableViewController implements Initializable {
         rowsInTableLabel.setText("Rows in table: " + String.valueOf(tableView.getItems().size()));
 
 
+        purchaseListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent click) {
+
+                if (click.getClickCount() == 2) {
+                    //Use purchaseListView's getSelected Item
+                    Product currentItemSelected = purchaseListView.getSelectionModel()
+                            .getSelectedItem();
+                }
+            }
+        });
     }
     }
 
