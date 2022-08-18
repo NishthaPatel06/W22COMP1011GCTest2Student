@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.st200474598.w22comp1011gctest2student/com.st200474598.w22comp1011gctest2student.Main
+                                com.example.w22comp1011gctest2student/com.example.w22comp1011gctest2student.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
