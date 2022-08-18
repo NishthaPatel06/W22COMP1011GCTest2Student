@@ -1,3 +1,6 @@
+//Name : Nishtha Patel
+//Student Number: 200474598
+
 package com.example.w22comp1011gctest2student;
 
 import javafx.application.Application;

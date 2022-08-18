@@ -1,3 +1,5 @@
+//Name : Nishtha Patel
+//Student Number: 200474598
 module com.example.w22comp1011gctest2student {
     requires javafx.controls;
     requires javafx.fxml;

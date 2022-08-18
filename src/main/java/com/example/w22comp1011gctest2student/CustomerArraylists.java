@@ -1,3 +1,5 @@
+//Name : Nishtha Patel
+//Student Number: 200474598
 package com.example.w22comp1011gctest2student;
 
 // Java program to read JSON from a file
