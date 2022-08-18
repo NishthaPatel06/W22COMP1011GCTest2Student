@@ -3,13 +3,18 @@
 package com.example.w22comp1011gctest2student;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 
-public class TableViewController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class TableViewController implements Initializable {
     @FXML
     private Label saleLabel;
 
@@ -45,6 +50,7 @@ public class TableViewController {
 
     @FXML
     private ImageView imageView;
+    private CustomerArraylists Utility;
 
     @FXML
     private void top10Customers()
@@ -63,4 +69,21 @@ public class TableViewController {
     {
         System.out.println("called method loadAllCustomers");
     }
-}
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        Customer customer = new Customer();
+
+        idColumn.setCellValueFactory(new PropertyValueFactory<>(String.valueOf(customer.getId())));
+        firstNameColumn.setCellValueFactory(new PropertyValueFactory<>(customer.getFirstName()));
+        lastNameColumn.setCellValueFactory(new PropertyValueFactory<>(customer.getLastName()));
+        phoneColumn.setCellValueFactory(new PropertyValueFactory<>(customer.getPhoneNumber()));
+        tableView.getItems().addAll(Utility.getCustomersFromJSONFile("customers.json"));
+        rowsInTableLabel.setText("Rows in table: " + String.valueOf(tableView.getItems().size()));
+
+
+    }
+    }
+

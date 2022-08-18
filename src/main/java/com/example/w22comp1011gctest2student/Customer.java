@@ -22,6 +22,10 @@ public class Customer {
     public Customer(int i, String s, double v, double v1, String s1) {
     }
 
+    public Customer() {
+
+    }
+
     //Getters
     public String getId() {
         return id;
