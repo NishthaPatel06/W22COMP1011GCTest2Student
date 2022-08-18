@@ -44,4 +44,8 @@ public class CustomerArraylists {
             reader.endArray();
         }
     }
+
+    public static Object getSearch() {
+        return getSearch();
+    }
 }

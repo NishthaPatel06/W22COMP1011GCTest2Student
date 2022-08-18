@@ -38,5 +38,13 @@ public class Product {
   public String toString() {
     return String.format("[%S]-$[%S]", name, salePrice);
   }
+
+  public Object getSum() {
+    return getSum();
+  }
+
+  public Double getSumAsDouble() {
+    return getSumAsDouble();
+  }
 }
 
