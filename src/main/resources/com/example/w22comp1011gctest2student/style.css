@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+
+.root{
+    -fx-background-color: linear-gradient(rgb(140, 150, 152), rgb(64, 112, 137));
+    -fx-font-family: "Sofia", sans-serif;
+}
+#studentLabel{
+    -fx-font-size: 20pt;
+}
+#msgLabel{
+    -fx-font-size: 15pt;
+}
+.button{
+    -fx-font-size: 10pt;
+    -fx-border-radius: 35;
+}
+.combo-box{
+    -fx-font-size: 10pt;
+    -fx-cursor: hand;
+    -fx-border-radius: 35;
+}
+.button:hover{
+    -fx-background-color: linear-gradient(rgb(140, 150, 152), rgb(64, 112, 137));
+    -fx-cursor: hand;
+}
