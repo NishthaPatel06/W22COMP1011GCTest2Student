@@ -82,7 +82,8 @@ public class TableViewController implements Initializable {
         tableView.getItems().addAll(Utility.getCustomersFromJSONFile("customers.json"));
         rowsInTableLabel.setText("Rows in table: " + String.valueOf(tableView.getItems().size()));
 
-
+//a listener added to the tableview object such that if a customer is selected, will put all of their
+// purchases in the purchaseListView.
         purchaseListView.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
             @Override
