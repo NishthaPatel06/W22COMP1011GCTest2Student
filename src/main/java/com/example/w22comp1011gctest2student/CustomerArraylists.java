@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class CustomerArraylists {
     static void task3() {
 
         ArrayList<Customer> ProductsList = new ArrayList<>();
-        ProductsList.add(new Customer(78, "woo-vneck-tee-blue", 14.0, 15.0, "https://woocommercecore.mystagingwebsite.com/wp-content/uploads/2017/12/vnech-tee-blue-1.jpg"));
+        ProductsList.add(new Customer(78, "woo-neck-tee-blue", 14.0, 15.0, "https://woocommercecore.mystagingwebsite.com/wp-content/uploads/2017/12/vnech-tee-blue-1.jpg"));
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String text = gson.toJson(ProductsList);
@@ -22,30 +23,43 @@ public class CustomerArraylists {
         System.out.println(text);
         System.out.println();
         System.out.println();
-        try {
-            passingInfoToTheJsonReader(text);
+
+    }
+
+
+    public static Customer getCustomersFromJSONFile(String fileName) {
+        //create a GSON object to parse the objects
+        Gson gson = new Gson();
+        Customer response = null;
+
+        try (
+
+                FileReader fileReader = new FileReader(fileName);
+                JsonReader jsonReader = new JsonReader(fileReader);
+        ) {
+            response = gson.fromJson(jsonReader, Customer.class);
         } catch (Exception e) {
-            System.err.println(e);
+            e.printStackTrace();
         }
+
+        return response;
     }
 
+    public static Product[] getPurchasesFromJSONFileArray(String fileName) {
+        //create a GSON object to parse the objects
+        Gson gson = new Gson();
+        Product[] purchases = null;
 
-    static void passingInfoToTheJsonReader(String text) throws IOException {
+        try (
 
-        JsonReader reader = new JsonReader(new StringReader(text));
-
-        reader.beginArray();
-        while (reader.hasNext()) {
-            reader.beginObject();
-            while (reader.hasNext()) {
-
-                reader.endObject();
-            }
-            reader.endArray();
+                FileReader fileReader = new FileReader(fileName);
+                JsonReader jsonReader = new JsonReader(fileReader);
+        ) {
+            purchases = gson.fromJson(jsonReader, Product[].class);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    }
 
-    public static Object getSearch() {
-        return getSearch();
+        return purchases;
     }
 }
