@@ -11,6 +11,10 @@ public class Customer {
     private String phoneNumber;
     private ArrayList<Product> purchases;
 
+    //Constructors for products
+    public Customer(int i, String s, double v, double v1, String s1) {
+    }
+
     //Getters
     public String getId() {
         return id;
